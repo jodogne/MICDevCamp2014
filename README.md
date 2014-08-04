@@ -5,7 +5,8 @@ This repository contains our code for PhotoTrack, an application that
 was developed in 3 days during the [MIC Summer Camp
 2014](http://softlab.mic-belgique.be/summercamp), an open-source
 hackathon organized by the Microsoft Innovation Center of Mons
-(Belgium).
+(Belgium). The application is composed of a C++ back-end, of a Web application,
+and of an Andoid native application.
 
 The code is released under the [AGPLv3
 license](http://www.gnu.org/licenses/agpl-3.0.en.html).
