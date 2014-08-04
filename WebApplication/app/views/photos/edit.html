@@ -1,0 +1,63 @@
+
+    <form role="form" name="siteForm">
+        <fieldset>
+            <legend>Add Photo</legend>
+
+            <div class="form-group" ng-class="{error: siteForm.name.$invalid}">
+                <label for="name">Image</label>
+                <div class="controls">
+                    <input type="text" name="name" class="form-control" ng-model="site.name" required>
+                    <span ng-show="siteForm.name.$error.required" class="help-inline">Required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{error: siteForm.tag.$invalid}">
+                <label>Tag</label>
+                <div class="controls">
+                    <label><input type="radio" ng-model="site.tag" value="before" />Before</label>
+                    <label><input type="radio" ng-model="site.tag" value="during" />During</label>
+                    <label><input type="radio" ng-model="site.tag" value="after" />After</label>
+                    <span ng-show="siteForm.tag.$error.required" class="help-inline">Required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{error: siteForm.pitnumber.$invalid}">
+                <label for="pitnumber">Pit#</label>
+                <div class="controls">
+                    <input type="text" name="pitnumber" class="form-control" ng-model="site.pitnumber" required>
+                    <span ng-show="siteForm.pitnumber.$error.required" class="help-inline">Required</span>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{error: siteForm.address.$invalid}">
+                <label for="address">Address</label>
+                <div class="controls">
+                    <textarea name="address" id="address" ng-model="site.address" class="form-control" ></textarea>
+                    <a ng-click="geocode()" class="btn">Geocode</a>
+                    <a ng-click="geocodehere()" class="btn">Geocode</a>
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{error: siteForm.gps.$invalid}">
+                <label for="gps">GPS</label>
+                <div class="controls">
+                    <input type="text" name="gps" class="form-control" ng-model="site.gps" >              
+                </div>
+            </div>
+
+            <div class="form-group" ng-class="{error: siteForm.date.$invalid}">
+                <label for="date">Date</label>
+                <div class="controls">
+                    <input type="date" name="date" class="form-control" ng-model="site.date" >              
+                </div>
+            </div>
+
+
+            <div class="form-actions">
+                <a href="#/sites" class="btn">Cancel</a>
+                <button ng-click="save()" ng-disabled="isClean() || siteForm.$invalid" class="btn btn-primary">Save</button>
+                <button ng-click="destroy()" ng-show="site.uid" class="btn btn-danger">Delete</button>
+            </div>
+
+        </fieldset>
+    </form>

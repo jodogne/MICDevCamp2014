@@ -1,0 +1,38 @@
+<a class="pull-right" href="#/sites">&lt; Back to sites list</a>
+
+<h1>{{site.Name}}</h1>
+<p><b>Pit #</b> : {{site.PitNumber}}</p>
+<address>{{site.Address}}</address>
+<h2>Photos</h2>
+<p><a ng-href="{{API_PATH}}/sites/{{site.Uuid}}/archive" class="btn btn-lg btn-default" download><i class="glyphicon glyphicon-compressed"></i> Download Archive</a></p>
+
+<div class="row">
+  <div ng-repeat="image in list" class="col-xs-12 col-sm-4">
+    <div class="thumbnail">
+    	<div class="img">
+      		<img ng-click="open(image)" src="{{API_PATH}}/photos/{{image.Uuid}}/image" alt="" class="img-responsive">
+    	</div>
+      <div class="caption">
+       	<p>{{image.Tag}}</p>
+        <p>{{image.SecondsSinceEpoch | date:shortDate}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Image</h4>
+      </div>
+      <div class="modal-body" >
+      	<img ng-src="{{curImg}}" class="img-responsive">        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

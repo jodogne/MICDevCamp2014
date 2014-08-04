@@ -1,0 +1,76 @@
+
+    <form class="form-horizontal"  name="userForm">
+        <fieldset>
+            <legend>User</legend>
+
+            <div class="form-group" ng-class="{error: userForm.FullName.$invalid}">
+                <label for="FullName">Full Name</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>                
+                    <input type="text" name="FullName" class="form-control" ng-model="user.FullName" required>
+                </div>
+                    <span ng-show="userForm.FullName.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="form-group" ng-class="{error: userForm.Email.$invalid}">
+                <label for="Email">Email</label>
+                <div class="input-group">
+                    <div class="input-group-addon">@</div>                
+                    <input type="Email" name="Email" class="form-control" ng-model="user.Email" required>
+                </div>
+                    <span ng-show="userForm.Email.$error.required" class="help-inline">Required</span>
+            </div>
+
+             <div class="form-group" ng-class="{error: userForm.UserName.$invalid}">
+                <label for="UserName">User Name</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>                
+                    <input type="text" name="UserName" class="form-control" ng-model="user.UserName" required>
+                </div>
+                    <span ng-show="userForm.UserName.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="form-group" ng-class="{error: userForm.Password.$invalid}">
+                <label for="Password">Password</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>                
+                    <input type="text" name="Password" class="form-control" ng-model="user.Password" required>
+                </div>
+                    <span ng-show="userForm.Password.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="form-group" ng-class="{error: userForm.Organization.$invalid}">
+                <label for="Organization">Organization</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="glyphicon glyphicon-briefcase"></i></div>                
+                    <input type="text" name="Organization" class="form-control" ng-model="user.Organization" required>
+                </div>
+                    <span ng-show="userForm.Organization.$error.required" class="help-inline">Required</span>
+            </div>
+
+            <div class="form-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" name="IsSupervisor" ng-model="user.IsSupervisor" >                 
+                        Is Supervisor.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="controls">
+                    <label class="checkbox">
+                        <input type="checkbox" name="IsAdmin" ng-model="user.IsAdmin" >                    
+                        Is Admin.
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="#/users" class="btn">Cancel</a>
+                <button ng-click="save()" ng-disabled="isClean() || userForm.$invalid" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>
+                <a ng-click="destroy()" ng-show="user.Uuid" class="btn btn-danger"><i class="glyphicon glyphicon-floppy-trash"> Delete</a>
+            </div>
+
+        </fieldset>
+    </form>

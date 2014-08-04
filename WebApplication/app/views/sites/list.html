@@ -1,0 +1,35 @@
+<h1>Sites</h1>
+
+<p class="pull-right">
+Search : <input type="text" ng-model="search"> 
+<a  ng-href="#/site/add" class="btn btn-large btn-primary"><i class="glyphicon glyphicon-plus"></i> Add</a>
+</p>
+<div class="table-responsive">
+
+<table ng-table="tableParams" class="table table-hover table-bordered">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Status</th>
+			<th>Pit#</th>
+			<th width="120"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="site in list | filter:search">
+			<td>{{site.Name}}</td>
+			<td>{{site.Status}}</td>
+			<td>{{site.PitNumber}}</td>
+			<td>
+				<span class="btn-group">
+					
+				<a ng-href="#/site/{{site.Uuid}}" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-pencil"></i></a>
+				<a ng-href="#/site/{{site.Uuid}}/photos" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-picture"></i></a>
+				<a ng-href="{{API_PATH}}/site/{{site.Uuid}}/archive" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-compressed"></i></a>
+				</span>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+</div>
