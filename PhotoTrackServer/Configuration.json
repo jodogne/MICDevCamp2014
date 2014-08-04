@@ -1,0 +1,5 @@
+{
+  "HttpPort" : 8000,
+  "Assets" : "Assets",
+  "Database" : "index.db"
+}
