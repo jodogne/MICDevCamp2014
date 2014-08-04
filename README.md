@@ -13,4 +13,4 @@ license](http://www.gnu.org/licenses/agpl-3.0.en.html).
 
 The specifications are available in the `Documents` folder. As this
 code is the result of a intensive appathon, many tasks remain to be
-done! Get in touch with the [AUTHORS](AUTHORS) for more information ;)
+done! Get in touch with the [authors](AUTHORS) for more information ;)
