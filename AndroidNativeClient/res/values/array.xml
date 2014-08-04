@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="tags">
+        <item>Before</item>
+        <item>Current</item>
+        <item>After</item>
+    </string-array>
+</resources>
